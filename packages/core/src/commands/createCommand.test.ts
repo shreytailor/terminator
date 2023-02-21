@@ -1,4 +1,4 @@
-import { createCommand } from './index';
+import { createCommand } from './createCommand';
 
 const DEFAULT_TIME = 10000;
 

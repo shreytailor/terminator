@@ -1,7 +1,13 @@
-import { Scheduler } from './types';
 import { exec } from 'child_process';
-import { createCommand } from '../commands';
+import { createCommand } from '../commands/createCommand';
 import { HibernateParams, RestartParams, ShutdownParams } from '../types';
+
+export interface Scheduler {
+  scheduleShutdown: (params: ShutdownParams) => void;
+  scheduleRestart: (params: RestartParams) => void;
+  scheduleHibernation: (params: HibernateParams) => void;
+  abortTasks: () => void;
+}
 
 export class WindowsScheduler implements Scheduler {
   scheduleShutdown(params: ShutdownParams): void {

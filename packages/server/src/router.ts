@@ -33,7 +33,7 @@ export function makeRouter() {
     }
   });
 
-  router.post('/abort', (request, response) => {
+  router.post('/abort', (_request, response) => {
     scheduler.abortTasks();
     response.send();
   });

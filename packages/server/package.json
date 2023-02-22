@@ -1,0 +1,18 @@
+{
+  "name": "@terminator/server",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Shrey Tailor",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "zod": "^3.20.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

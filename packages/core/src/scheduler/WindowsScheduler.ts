@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { createCommand } from '../commands/createCommand';
+import { createCommand } from '../command/createCommand';
 import { HibernateParams, RestartParams, ShutdownParams } from '../types';
 
 export interface Scheduler {

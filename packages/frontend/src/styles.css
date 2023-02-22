@@ -1,0 +1,27 @@
+/* Importing the local fonts. */
+@font-face {
+  font-family: 'PP Mondwest';
+  font-weight: normal;
+  src: local('PPMondwest-Regular'), url('./assets/fonts/PPMondwest-Regular.otf');
+}
+
+@font-face {
+  font-family: 'PP NeueBit';
+  font-weight: bold;
+  src: local('PPNeueBit-Bold'), url('./assets/fonts/PPNeueBit-Bold.otf');
+}
+
+/* Global styling. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 8px;
+}
+
+body {
+  background-color: hsl(72, 33%, 94%);
+}

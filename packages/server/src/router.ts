@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { HibernateSchema, RestartSchema, ShutdownSchema } from './schemas';
 import { WindowsScheduler } from '@terminator/core';
+import { HibernateSchema, RestartSchema, ShutdownSchema } from './schemas';
 
 export function makeRouter() {
   const router = Router();

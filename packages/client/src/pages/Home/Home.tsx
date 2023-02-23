@@ -1,23 +1,47 @@
 import classes from './Home.module.css';
 import { useNavigate } from 'react-router-dom';
 import { PageHeading } from '../../components/PageHeading';
-import { ActionButton } from '../../components/ActionButton/ActionButton';
+import { makeActionButton } from '../../components/ActionButton';
 
 export function Home() {
   const navigate = useNavigate();
 
-  const onShutdownActionClick = () => {
-    navigate('/shutdown');
-  };
+  const shutdownButton = makeActionButton({
+    type: 'shutdown',
+    onClick: () => {
+      navigate('/shutdown');
+    },
+  });
+
+  const restartButton = makeActionButton({
+    type: 'restart',
+    onClick: () => {
+      navigate('/restart');
+    },
+  });
+
+  const hibernateButton = makeActionButton({
+    type: 'hibernate',
+    onClick: () => {
+      navigate('/hibernate');
+    },
+  });
+
+  const abortButton = makeActionButton({
+    type: 'abort',
+    onClick: () => {
+      alert('All scheduled operations have been cancelled.');
+    },
+  });
 
   return (
     <>
       <PageHeading text="Actions" />
       <div className={classes.actionButtonsContainer}>
-        <ActionButton variant="shutdown" onClick={onShutdownActionClick} />
-        <ActionButton variant="restart" />
-        <ActionButton variant="hibernate" />
-        <ActionButton variant="abort" />
+        {shutdownButton}
+        {restartButton}
+        {hibernateButton}
+        {abortButton}
       </div>
     </>
   );

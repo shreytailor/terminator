@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import classes from './NavigationBar.module.css';
+import { NavigationTitle } from '../../typography';
 
 export function NavigationBar() {
   return (
     <Link to="/">
-      <h1 className={classes.navigationHeading}>Terminator</h1>
+      <NavigationTitle className={classes.navigationTitle}>
+        Terminator
+      </NavigationTitle>
     </Link>
   );
 }

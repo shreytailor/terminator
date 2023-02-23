@@ -1,6 +1,7 @@
 import classes from './Home.module.css';
+import { PageTitle } from '../../typography';
 import { useNavigate } from 'react-router-dom';
-import { PageHeading } from '../../components/PageHeading';
+import { abortOperations } from '../../utilities/abort';
 import { makeActionButton } from '../../components/ActionButton';
 
 export function Home() {
@@ -30,13 +31,13 @@ export function Home() {
   const abortButton = makeActionButton({
     type: 'abort',
     onClick: () => {
-      alert('All scheduled operations have been cancelled.');
+      abortOperations();
     },
   });
 
   return (
     <>
-      <PageHeading text="Actions" />
+      <PageTitle>Actions</PageTitle>
       <div className={classes.actionButtonsContainer}>
         {shutdownButton}
         {restartButton}

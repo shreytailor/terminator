@@ -2,14 +2,11 @@
   border: none;
   background-color: black;
   cursor: pointer;
-  color: white;
   padding: 16px 4px;
-}
-
-.actionButton > p {
-  font-family: 'Poppins';
-  font-weight: 700;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  margin-top: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  align-items: center;
+  color: white;
 }

@@ -7,6 +7,7 @@ import {
   RiShutDownLine,
   TiCancelOutline,
 } from 'react-icons/all';
+import { Label } from '../../typography';
 
 interface ActionButtonProps {
   text: string;
@@ -17,10 +18,8 @@ interface ActionButtonProps {
 function ActionButton({ text, icon, onClick }: ActionButtonProps) {
   return (
     <button className={classes.actionButton} onClick={onClick}>
-      <>
-        {icon}
-        <p>{text}</p>
-      </>
+      {icon}
+      <Label white>{text}</Label>
     </button>
   );
 }
@@ -40,7 +39,8 @@ export function makeActionButton({
       return (
         <ActionButton
           text="SHUTDOWN"
-          icon={<RiShutDownLine size={DEFAULT_ICON_SIZE} onClick={onClick} />}
+          icon={<RiShutDownLine size={DEFAULT_ICON_SIZE} />}
+          onClick={onClick}
         />
       );
     case 'restart':

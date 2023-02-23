@@ -1,6 +1,7 @@
+import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import classes from './PageTemplate.module.css';
-import { NavigationBar } from '../NavigationBar';
+import { NavigationBar } from '../../components/NavigationBar';
 
 export function PageTemplate() {
   return (
@@ -9,6 +10,7 @@ export function PageTemplate() {
       <div className={classes.pageContent}>
         <Outlet />
       </div>
+      <Toaster />
     </div>
   );
 }

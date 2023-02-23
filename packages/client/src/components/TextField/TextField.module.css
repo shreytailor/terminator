@@ -1,0 +1,14 @@
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.fieldContainer > input {
+  font-family: 'Poppins';
+  color: hsla(0, 0%, 61%, 1);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  outline: none;
+}

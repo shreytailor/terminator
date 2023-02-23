@@ -17,6 +17,12 @@
   src: local('Poppins-SemiBold'), url('./assets/fonts/Poppins-SemiBold.ttf');
 }
 
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  src: local('Poppins-Medium'), url('./assets/fonts/Poppins-Medium.ttf');
+}
+
 /* Global styling. */
 * {
   margin: 0;

@@ -8,9 +8,10 @@ import classes from './ActionButton.module.css';
 
 interface ActionButtonProps {
   variant: 'shutdown' | 'restart' | 'hibernate' | 'abort';
+  onClick?: () => void;
 }
 
-export function ActionButton({ variant }: ActionButtonProps) {
+export function ActionButton({ variant, onClick }: ActionButtonProps) {
   const DEFAULT_ICON_SIZE = 24;
 
   const icon =
@@ -25,7 +26,7 @@ export function ActionButton({ variant }: ActionButtonProps) {
     );
 
   return (
-    <button className={classes.actionButton}>
+    <button className={classes.actionButton} onClick={onClick}>
       {icon}
       <p>{variant.toUpperCase()}</p>
     </button>

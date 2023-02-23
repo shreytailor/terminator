@@ -1,7 +1,7 @@
+import { Hibernate, Restart, Shutdown } from './pages';
 import { Home } from './pages/Home';
-import { PageTemplate } from './pages/PageTemplate';
+import { PageTemplate } from './components/layouts/PageTemplate';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ActionPageHeader } from './components/ActionPageHeader';
 
 export function ApplicationRouter() {
   const router = createBrowserRouter([
@@ -11,15 +11,15 @@ export function ApplicationRouter() {
       children: [
         {
           path: '/shutdown',
-          element: <ActionPageHeader title="Shutdown Options" />,
+          element: <Shutdown />,
         },
         {
           path: '/restart',
-          element: <ActionPageHeader title="Restart Options" />,
+          element: <Restart />,
         },
         {
           path: '/hibernate',
-          element: <ActionPageHeader title="Hibernate Options" />,
+          element: <Hibernate />,
         },
         {
           path: '/',

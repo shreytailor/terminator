@@ -1,13 +1,13 @@
-import { TextField } from './TextField';
+import { NumberField } from './NumberField';
 import { CheckBox } from './CheckBox';
 
-export function makeDelayTextField({
+export function makeDelayNumberField({
   onChange,
 }: {
   onChange: (value: string) => void;
 }) {
   return (
-    <TextField
+    <NumberField
       id="delay-input"
       label="DELAY (IN MINUTES)"
       onChange={onChange}

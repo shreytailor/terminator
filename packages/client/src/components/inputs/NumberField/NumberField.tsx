@@ -1,19 +1,19 @@
-import classes from './TextField.module.css';
 import { Caption } from '../../../typography';
+import classes from './NumberField.module.css';
 
-interface TextFieldProps {
+interface NumberFieldProps {
   id: string;
   label: string;
-  placeholder?: string;
   onChange: (value: string) => void;
+  defaultValue?: number;
 }
 
-export function TextField({
+export function NumberField({
   id,
   label,
-  placeholder,
   onChange,
-}: TextFieldProps) {
+  defaultValue = 0,
+}: NumberFieldProps) {
   return (
     <div className={classes.fieldContainer}>
       <label htmlFor={id}>
@@ -21,11 +21,11 @@ export function TextField({
       </label>
       <input
         id={id}
-        type="text"
-        placeholder={placeholder}
+        type="number"
         onChange={(event) => {
           onChange(event.target.value);
         }}
+        defaultValue={defaultValue}
       />
     </div>
   );

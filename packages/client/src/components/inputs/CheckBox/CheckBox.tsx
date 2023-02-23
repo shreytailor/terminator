@@ -1,13 +1,19 @@
-import { Caption } from '../../../typography';
 import classes from './CheckBox.module.css';
+import { Caption } from '../../../typography';
 
 interface CheckBoxProps {
   id: string;
   label: string;
   onToggle: (value: boolean) => void;
+  defaultChecked?: boolean;
 }
 
-export function CheckBox({ id, label, onToggle }: CheckBoxProps) {
+export function CheckBox({
+  id,
+  label,
+  onToggle,
+  defaultChecked = false,
+}: CheckBoxProps) {
   return (
     <div className={classes.checkBoxContainer}>
       <input
@@ -16,6 +22,7 @@ export function CheckBox({ id, label, onToggle }: CheckBoxProps) {
         onChange={(event) => {
           onToggle(event.target.checked);
         }}
+        defaultChecked={defaultChecked}
       />
       <label htmlFor={id}>
         <Caption>{label.toUpperCase()}</Caption>

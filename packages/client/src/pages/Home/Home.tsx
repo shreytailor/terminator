@@ -1,7 +1,7 @@
 import classes from './Home.module.css';
 import { PageTitle } from '../../typography';
 import { useNavigate } from 'react-router-dom';
-import { abortOperations } from '../../utilities/abort';
+import { handleAbort } from '../../utilities/handlers';
 import { makeActionButton } from '../../components/buttons';
 
 export function Home() {
@@ -31,7 +31,7 @@ export function Home() {
   const abortButton = makeActionButton({
     type: 'abort',
     onClick: () => {
-      abortOperations();
+      handleAbort();
     },
   });
 

@@ -3,14 +3,14 @@ import { createCommand } from './createCommand';
 const DEFAULT_TIME = 10000;
 
 describe('Shutdown', () => {
-  test('Shutdown with no extra parameters.', () => {
+  test('ActionPageTemplate with no extra parameters.', () => {
     const command = createCommand({
       type: 'shutdown',
     });
     expect(command).toEqual('shutdown /s');
   });
 
-  test('Shutdown with only the time parameter.', () => {
+  test('ActionPageTemplate with only the time parameter.', () => {
     const command = createCommand({
       type: 'shutdown',
       after: DEFAULT_TIME,
@@ -18,7 +18,7 @@ describe('Shutdown', () => {
     expect(command).toEqual(`shutdown /s /t ${DEFAULT_TIME}`);
   });
 
-  test('Shutdown with only the forced parameter being false.', () => {
+  test('ActionPageTemplate with only the forced parameter being false.', () => {
     const command = createCommand({
       type: 'shutdown',
       forced: false,
@@ -26,7 +26,7 @@ describe('Shutdown', () => {
     expect(command).toEqual('shutdown /s');
   });
 
-  test('Shutdown with only the forced parameter being true.', () => {
+  test('ActionPageTemplate with only the forced parameter being true.', () => {
     const command = createCommand({
       type: 'shutdown',
       forced: true,
@@ -34,7 +34,7 @@ describe('Shutdown', () => {
     expect(command).toEqual('shutdown /s /f');
   });
 
-  test('Shutdown with the time parameter and the forced parameter being true.', () => {
+  test('ActionPageTemplate with the time parameter and the forced parameter being true.', () => {
     const command = createCommand({
       type: 'shutdown',
       forced: true,

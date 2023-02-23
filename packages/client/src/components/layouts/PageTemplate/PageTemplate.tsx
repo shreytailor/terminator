@@ -1,7 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import { Outlet } from 'react-router-dom';
 import classes from './PageTemplate.module.css';
-import { NavigationBar } from '../../components/NavigationBar';
+import { NavigationBar } from '../../NavigationBar';
 
 export function PageTemplate() {
   return (

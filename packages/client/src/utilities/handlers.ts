@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 
-export function abortOperations() {
+export function handleAbort() {
   toast.success('All scheduled operations have been aborted.', {
     position: 'bottom-center',
     style: {

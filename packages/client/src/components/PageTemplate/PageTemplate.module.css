@@ -1,0 +1,14 @@
+.appContainer {
+  width: 75%;
+  margin: auto;
+}
+
+.pageContent {
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .appContainer {
+    width: 560px;
+  }
+}

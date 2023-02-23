@@ -1,0 +1,17 @@
+.actionButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-top: 16px;
+}
+
+.actionButtonsContainer > * {
+  flex: 1;
+}
+
+@media screen and (min-width: 640px) {
+  .actionButtonsContainer {
+    flex-direction: row;
+    column-gap: 16px;
+  }
+}

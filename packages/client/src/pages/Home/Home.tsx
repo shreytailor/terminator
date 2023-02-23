@@ -2,7 +2,7 @@ import classes from './Home.module.css';
 import { PageTitle } from '../../typography';
 import { useNavigate } from 'react-router-dom';
 import { abortOperations } from '../../utilities/abort';
-import { makeActionButton } from '../../components/ActionButton';
+import { makeActionButton } from '../../components/buttons';
 
 export function Home() {
   const navigate = useNavigate();

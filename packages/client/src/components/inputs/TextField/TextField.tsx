@@ -1,5 +1,5 @@
 import classes from './TextField.module.css';
-import { Label } from '../../typography';
+import { Caption } from '../../../typography';
 
 interface TextFieldProps {
   id: string;
@@ -17,7 +17,7 @@ export function TextField({
   return (
     <div className={classes.fieldContainer}>
       <label htmlFor={id}>
-        <Label>{label}</Label>
+        <Caption>{label}</Caption>
       </label>
       <input
         id={id}

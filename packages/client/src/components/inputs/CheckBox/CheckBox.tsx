@@ -1,4 +1,4 @@
-import { Label } from '../../typography';
+import { Caption } from '../../../typography';
 import classes from './CheckBox.module.css';
 
 interface CheckBoxProps {
@@ -18,7 +18,7 @@ export function CheckBox({ id, label, onToggle }: CheckBoxProps) {
         }}
       />
       <label htmlFor={id}>
-        <Label>{label.toUpperCase()}</Label>
+        <Caption>{label.toUpperCase()}</Caption>
       </label>
     </div>
   );

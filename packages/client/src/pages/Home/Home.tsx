@@ -30,8 +30,8 @@ export function Home() {
 
   const abortButton = makeActionButton({
     type: 'abort',
-    onClick: () => {
-      handleAbort();
+    onClick: async () => {
+      await handleAbort();
     },
   });
 

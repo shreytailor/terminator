@@ -1,12 +1,31 @@
-import toast from 'react-hot-toast';
+import { makeErrorToast, makeSuccessToast } from './toast';
+import axios from 'axios';
 
-export function handleAbort() {
-  toast.success('All scheduled operations have been aborted.', {
-    position: 'bottom-center',
-    style: {
-      fontFamily: 'Poppins',
-      fontWeight: '500',
-      fontSize: '0.8rem',
-    },
+export async function handleShutdown({
+  delay,
+  forceClose,
+}: {
+  delay: string;
+  forceClose: boolean;
+}): Promise<boolean> {
+  if (delay === '') {
+    makeErrorToast('Please enter a numerical value for delay.');
+    return false;
+  }
+
+  await axios.post('/api/shutdown', {
+    after: Number(delay) * 60,
+    forced: forceClose,
   });
+  makeSuccessToast(`Shutdown has been scheduled!`);
+  return true;
+}
+
+export function handleRestart() {}
+
+export function handleHibernation() {}
+
+export async function handleAbort() {
+  await axios.post('/api/abort');
+  makeSuccessToast('All pending operations have been aborted.');
 }

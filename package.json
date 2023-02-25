@@ -12,6 +12,9 @@
   },
   "scripts": {
     "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "prettier:write": "prettier --write .",
+    "start:server": "yarn workspace @terminator/server start",
+    "build:client": "yarn workspace @terminator/client build",
+    "build:core": "yarn workspace @terminator/core build"
   }
 }

@@ -8,7 +8,10 @@ const port = process.env.PORT || 5556;
 // For accepting JSON data in the POST endpoints.
 server.use(express.json());
 
-server.use('/', express.static(path.join(__dirname, '../frontend')));
+server.use(
+  '/',
+  express.static(path.join(__dirname, '../', '../', 'client', 'dist'))
+);
 server.use('/api', makeRouter());
 
 server.listen(port, () => {

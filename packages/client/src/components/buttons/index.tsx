@@ -5,7 +5,7 @@ import {
   TiCancelOutline,
 } from 'react-icons/all';
 import { IconButton } from './IconButton';
-import { TextButton } from './TextButton/TextButton';
+import { TextButton } from './TextButton';
 
 export function makeActionButton({
   type,

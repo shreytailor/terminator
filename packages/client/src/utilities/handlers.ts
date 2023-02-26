@@ -17,13 +17,31 @@ export async function handleShutdown({
     after: Number(delay) * 60,
     forced: forceClose,
   });
-  makeSuccessToast(`Shutdown has been scheduled!`);
+  makeSuccessToast('Shutdown has been scheduled!');
   return true;
 }
 
-export function handleRestart() {}
+export async function handleRestart({
+  delay,
+  forceClose,
+}: {
+  delay: string;
+  forceClose: boolean;
+}): Promise<boolean> {
+  if (delay === '') {
+    makeErrorToast('Please enter a numerical value for delay.');
+    return false;
+  }
 
-export function handleHibernation() {}
+  await axios.post('/api/restart', {
+    after: Number(delay) * 60,
+    forced: forceClose,
+  });
+  makeSuccessToast('Restart has been scheduled!');
+  return true;
+}
+
+export async function handleHibernation() {}
 
 export async function handleAbort() {
   await axios.post('/api/abort');

@@ -1,3 +1,4 @@
+import { CommandGeneratorImpl, SchedulerImpl } from '@terminator/core';
 import * as express from 'express';
 import * as path from 'path';
 import { makeRouter } from './router';
@@ -12,7 +13,7 @@ server.use(
   '/',
   express.static(path.join(__dirname, '../', '../', 'client', 'dist'))
 );
-server.use('/api', makeRouter());
+server.use('/api', makeRouter(new SchedulerImpl(new CommandGeneratorImpl())));
 
 server.listen(port, () => {
   console.log(`Terminator is running on Port ${port}.`);

@@ -1,11 +1,7 @@
-interface Delayable {
+interface CommonParams {
   after?: number;
-}
-
-interface Forceable {
   forced?: boolean;
 }
 
-export interface ShutdownParams extends Delayable, Forceable {}
-export interface RestartParams extends Delayable, Forceable {}
-export interface HibernateParams extends Delayable {}
+export interface ShutdownParams extends CommonParams {}
+export interface RestartParams extends CommonParams {}

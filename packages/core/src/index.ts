@@ -1,2 +1,3 @@
-export { WindowsScheduler } from './scheduler/WindowsScheduler';
-export { ShutdownParams, RestartParams, HibernateParams } from './types';
+export { SchedulerImpl, Scheduler } from './scheduler';
+export { ShutdownParams, RestartParams } from './types';
+export { CommandGeneratorImpl } from './commandGenerator';

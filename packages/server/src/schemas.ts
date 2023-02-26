@@ -1,13 +1,11 @@
 import { z } from 'zod';
 
-const DelayableSchema = z.object({
-  after: z.number().optional(),
-});
+const CommonParamsSchema = z
+  .object({
+    after: z.number().optional(),
+    forced: z.boolean().optional(),
+  })
+  .strict();
 
-const ForceableSchema = z.object({
-  forced: z.boolean().optional(),
-});
-
-export const ShutdownSchema = DelayableSchema.merge(ForceableSchema).strict();
-export const RestartSchema = DelayableSchema.merge(ForceableSchema).strict();
-export const HibernateSchema = DelayableSchema.strict();
+export const ShutdownSchema = CommonParamsSchema;
+export const RestartSchema = CommonParamsSchema;

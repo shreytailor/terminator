@@ -5,7 +5,7 @@ import {
 } from '../components/inputs';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { handleShutdown } from '../utilities/handlers';
+import { handleRestart, handleShutdown } from '../utilities/handlers';
 
 export function Shutdown() {
   const navigate = useNavigate();
@@ -34,13 +34,26 @@ export function Shutdown() {
 }
 
 export function Restart() {
+  const navigate = useNavigate();
+  const [delay, setDelay] = useState('');
+  const [forceClose, setForceClose] = useState(false);
+
   return (
-    <ActionPageTemplate pageTitle="Restart Options" onSubmit={() => {}}>
+    <ActionPageTemplate
+      pageTitle="Restart Options"
+      onSubmit={async () => {
+        if (await handleRestart({ delay, forceClose })) navigate(-1);
+      }}
+    >
       {makeDelayNumberField({
-        onChange: () => {},
+        onChange: (value) => {
+          setDelay(value);
+        },
       })}
       {makeForceCloseCheckBox({
-        onToggle: () => {},
+        onToggle: (value) => {
+          setForceClose(value);
+        },
       })}
     </ActionPageTemplate>
   );

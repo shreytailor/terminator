@@ -1,10 +1,9 @@
 import { Router } from 'express';
-import { WindowsScheduler } from '@terminator/core';
-import { HibernateSchema, RestartSchema, ShutdownSchema } from './schemas';
+import { Scheduler } from '@terminator/core';
+import { RestartSchema, ShutdownSchema } from './schemas';
 
-export function makeRouter() {
+export function makeRouter(scheduler: Scheduler) {
   const router = Router();
-  const scheduler = new WindowsScheduler();
 
   router.post('/shutdown', (request, response) => {
     try {
@@ -18,15 +17,6 @@ export function makeRouter() {
   router.post('/restart', (request, response) => {
     try {
       scheduler.scheduleRestart(RestartSchema.parse(request.body));
-      response.send();
-    } catch {
-      response.status(400).send();
-    }
-  });
-
-  router.post('/hibernate', (request, response) => {
-    try {
-      scheduler.scheduleRestart(HibernateSchema.parse(request.body));
       response.send();
     } catch {
       response.status(400).send();

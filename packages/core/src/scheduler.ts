@@ -13,7 +13,6 @@ export class SchedulerImpl implements Scheduler {
 
   scheduleShutdown(params: ShutdownParams): void {
     const command = this.commandGenerator.generateShutdownCommand(params);
-    console.log(command);
     exec(command);
   }
 

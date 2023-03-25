@@ -16,6 +16,7 @@
     "dev:server": "yarn workspace @terminator/server dev",
     "dev:client": "yarn workspace @terminator/client dev",
     "start:server": "yarn workspace @terminator/server start",
+    "build:server": "yarn workspace @terminator/server build",
     "build:client": "yarn workspace @terminator/client build",
     "build:core": "yarn workspace @terminator/core build"
   }

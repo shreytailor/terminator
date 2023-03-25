@@ -55,25 +55,25 @@ For the sake of this explanation, let's consider the _host device_ as the one we
 
 The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown, restart, or hibernate. The endpoints use the host device's shell to schedule termination by creating processes, so naturally the backend has a dependency on it.
 
-The role of the frontend in Terminator is to provide an intuitive graphical user interface to the users. When an action is performed on the frontend (e.g. user wants to shutdown their computer after 30 minutes), the frontend sends HTTP requests to the backend to schedule those operations. As mentioned previously, the frontend can be accessed through any device on the local network giving the ability to "remotely" terminate your host computer.
+The role of the frontend in Terminator is to provide an intuitive graphical user interface to the users. When an action is performed on the frontend (e.g. user wants to shutdown their computer after 30 minutes), the frontend sends HTTP requests to the backend to schedule those operations. As mentioned previously, the frontend is hosted on the local network so it can be accessed through any device (that are also on the local network) giving the ability to "remotely" terminate your host computer.
 
 ## Getting Started
 
-To run the system, follow the instructions below.
+To execute Terminator on your host device, follow the steps below.
 
 1. Open your terminal and change the working directory to the project root (i.e., same level as the `packages` folder).
-2. Make the script to run the system executable by running the following command.
+2. Give execution permissions to the script used to run the system, using the following command.
 
 ```sh
 chmod +x scripts/execute.sh
 ```
 
-3. Finally, execute the system by running the following command.
+1. Finally, execute the system using the following command.
 
 ```sh
 scripts/execute.sh
 ```
 
-Terminator will then locally start on Port `5556` on your computer, and will be accessible to any device on your network.
+Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network.
 
 ## Development Setup

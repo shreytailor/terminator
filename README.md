@@ -32,7 +32,7 @@
 Terminator is an application that let's you remotely shutdown / restart / hibernate your computer from any device on your local network, using an intuitive web-interface as shown below.
 
 <p align="center">
-    <img src="./images/hero.png" width="500"/>
+    <img src="./images/hero.png" width="650"/>
 </p>
 
 ### Built With
@@ -50,7 +50,7 @@ Terminator is a full-stack application, so it consists of a frontend that was bu
 For the sake of explanation, let's consider the _host device_ as the one we want to terminate, and a _local network device_ as any other device on the same local network as the host.
 
 <p align="center">
-    <img src="./images/architecture.png" width="500"/>
+    <img src="./images/architecture.png" width="650"/>
 </p>
 
 When Terminator is started on the host computer, it will host the frontend and backend on the network its connected on.

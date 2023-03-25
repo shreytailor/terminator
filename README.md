@@ -99,13 +99,13 @@ yarn build:core
 4. Run the backend in development mode using the following command.
 
 ```sh
-yarn dev:client
+yarn dev:server
 ```
 
 5. Open another terminal window, and run the frontend in development mode using the following command.
 
 ```sh
-yarn dev:server
+yarn dev:client
 ```
 
 The `yarn dev:server` and `yarn dev:client` both support hot reloading, so any changes in the codebase will be reflected straightaway without having to re-run the scripts.

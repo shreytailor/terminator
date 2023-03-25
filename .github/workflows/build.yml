@@ -36,6 +36,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: yarn
+      - run: yarn build:core
       - run: yarn build:client
   build_backend:
     name: 👷🏼‍♂️ Build Backend Package
@@ -51,4 +52,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: yarn
+      - run: yarn build:core
       - run: yarn build:server

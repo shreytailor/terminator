@@ -29,7 +29,7 @@
 
 ## About The Project
 
-Terminator is an application that let's you remotely shutdown / restart / hibernate your computer from any device on your local network, using an intuitive web-interface as shown below.
+Terminator is an application that let's you remotely shutdown, restart, or hibernate your computer from any device on your local network, using an intuitive web interface (as shown below).
 
 <p align="center">
     <img src="./images/hero.png" width="650"/>
@@ -37,7 +37,7 @@ Terminator is an application that let's you remotely shutdown / restart / hibern
 
 ### Built With
 
-Terminator is a full-stack application, so it consists of a frontend that was built using React and a backend using Express. The entire codebase is written using TypeScript for the type-safety and ease of development.
+Terminator is a full stack application, so it consists of a React frontend and Express backend. The entire codebase is written using TypeScript for the type-safety and ease of development.
 
 [![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)](https://yarnpkg.com/)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -47,13 +47,13 @@ Terminator is a full-stack application, so it consists of a frontend that was bu
 
 ### Architecture
 
-For the sake of explanation, let's consider the _host device_ as the one we want to terminate, and a _local network device_ as any other device on the same local network as the host.
+For the sake of this explanation, let's consider the _host device_ as the one we want to terminate, and a _local network device_ as any other device on the same local network as the host. When Terminator is started on the host computer, it will host the frontend and backend on the network its connected on.
 
 <p align="center">
     <img src="./images/architecture.png" width="650"/>
 </p>
 
-When Terminator is started on the host computer, it will host the frontend and backend on the network its connected on.
+The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown, restart, or hibernate. The endpoints use the host device's shell to schedule termination, so naturally the backend has a dependency on it.
 
 ## Getting Started
 

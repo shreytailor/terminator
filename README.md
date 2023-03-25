@@ -13,6 +13,9 @@
                 <li>
                     <a href="#built-with">Built With</a>
                 </li>
+                <li>
+                    <a href="#architecture">Architecture</a>
+                </li>
             </ul>
         </li>
         <li>
@@ -26,7 +29,7 @@
 
 ## About The Project
 
-Terminator is an application that let's you remotely shutdown / restart / hibernate your computer from any device on your local network, using an intuitive web-interface.
+Terminator is an application that let's you remotely shutdown / restart / hibernate your computer from any device on your local network, using an intuitive web-interface as shown below.
 
 <p align="center">
     <img src="./images/hero.png" width="500"/>
@@ -34,13 +37,23 @@ Terminator is an application that let's you remotely shutdown / restart / hibern
 
 ### Built With
 
-Terminator is a full-stack application, so it consists of a frontend that was built using React and a backend using Express. The entire codebase is written using TypeScript for the type-safety.
+Terminator is a full-stack application, so it consists of a frontend that was built using React and a backend using Express. The entire codebase is written using TypeScript for the type-safety and ease of development.
 
 [![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)](https://yarnpkg.com/)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
 [![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/en/main)
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
+
+### Architecture
+
+For the sake of explanation, let's consider the _host device_ as the one we want to terminate, and a _local network device_ as any other device on the same local network as the host.
+
+<p align="center">
+    <img src="./images/architecture.png" width="500"/>
+</p>
+
+When Terminator is started on the host computer, it will host the frontend and backend on the network its connected on.
 
 ## Getting Started
 

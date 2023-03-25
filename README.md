@@ -65,15 +65,46 @@ To execute Terminator on your host device, follow the steps below.
 2. Give execution permissions to the script used to run the system, using the following command.
 
 ```sh
-chmod +x scripts/execute.sh
+chmod +x scripts/run.sh
 ```
 
 3. Finally, execute the system using the following command.
 
 ```sh
-scripts/execute.sh
+scripts/run.sh
 ```
 
 Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network.
 
 ## Development Setup
+
+To ready the codebase for development, follow the steps below.
+
+1. Open your terminal and change the working directory to the project root (i.e., same level as the `packages` folder).
+2. Install the dependencies using the following command.
+
+```sh
+yarn
+```
+
+3. Build the `core` package using the following command.
+
+```
+yarn build:core
+```
+
+4. Run the backend in development mode using the following command.
+
+```sh
+yarn dev:client
+```
+
+5. Open another terminal window, and run the frontend in development mode using the following command.
+
+```sh
+yarn dev:server
+```
+
+The `yarn dev:server` and `yarn dev:client` both support hot reloading, so any changes in the codebase will be reflected straightaway without having to re-run the scripts.
+
+> Note that if changes are made to the `core` package, you will need to re-run the `yarn build:core` command and possibly restart the frontend and backend.

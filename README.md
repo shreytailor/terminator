@@ -68,7 +68,7 @@ To execute Terminator on your host device, follow the steps below.
 chmod +x scripts/execute.sh
 ```
 
-1. Finally, execute the system using the following command.
+3. Finally, execute the system using the following command.
 
 ```sh
 scripts/execute.sh

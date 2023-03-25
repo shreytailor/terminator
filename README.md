@@ -53,7 +53,9 @@ For the sake of this explanation, let's consider the _host device_ as the one we
     <img src="./images/architecture.png" width="650"/>
 </p>
 
-The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown, restart, or hibernate. The endpoints use the host device's shell to schedule termination, so naturally the backend has a dependency on it.
+The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown, restart, or hibernate. The endpoints use the host device's shell to schedule termination by creating processes, so naturally the backend has a dependency on it.
+
+The role of the frontend in Terminator is to provide an intuitive graphical user interface to the users. When an action is performed on the frontend (e.g. user wants to shutdown their computer after 30 minutes), the frontend sends HTTP requests to the backend to schedule those operations. As mentioned previously, the frontend can be accessed through any device on the local network giving the ability to "remotely" terminate your host computer.
 
 ## Getting Started
 

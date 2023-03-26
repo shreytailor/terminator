@@ -9,3 +9,6 @@ dist/
 
 # For Mac machines
 .DS_Store
+
+# Environment variables
+.env

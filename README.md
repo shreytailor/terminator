@@ -38,7 +38,7 @@
 Terminator is an application that let's you remotely shutdown, restart, or hibernate your computer from any device on your local network, using an intuitive web interface (as shown below).
 
 <p align="center">
-    <img src="./images/hero.png" width="650"/>
+    <img src="./images/home.png" width="650"/>
 </p>
 
 ### Built With
@@ -80,7 +80,7 @@ chmod +x scripts/run.sh
 scripts/run.sh
 ```
 
-Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network.
+Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network. If you want to configure the port number, refer to the [Development Setup](#development-setup) guide below.
 
 ## Development Setup
 
@@ -114,6 +114,10 @@ yarn dev:client
 The `yarn dev:server` and `yarn dev:client` both support hot reloading, so any changes in the codebase will be reflected straightaway without having to re-run the scripts.
 
 > Note that if changes are made to the `core` package, you will need to re-run the `yarn build:core` command and possibly restart the frontend and backend.
+
+### Port Configuration
+
+If you want to configure the port on which the backend runs, create a `.env` file in the `packages/server` directory similar to the provided `.example.env` file. Thereafter, provide a value to the `PORT` key and then restart the server for the environment variable to be configured.
 
 ## Screenshots
 

@@ -1,4 +1,4 @@
-import { Hibernate, Restart, Shutdown } from './pages';
+import { Restart, Shutdown } from './pages';
 import { Home } from './pages/Home';
 import { PageTemplate } from './components/layouts/PageTemplate';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -16,10 +16,6 @@ export function ApplicationRouter() {
         {
           path: '/restart',
           element: <Restart />,
-        },
-        {
-          path: '/hibernate',
-          element: <Hibernate />,
         },
         {
           path: '/',

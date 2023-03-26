@@ -58,13 +58,3 @@ export function Restart() {
     </ActionPageTemplate>
   );
 }
-
-export function Hibernate() {
-  return (
-    <ActionPageTemplate pageTitle="Hibernate Options" onSubmit={() => {}}>
-      {makeDelayNumberField({
-        onChange: () => {},
-      })}
-    </ActionPageTemplate>
-  );
-}

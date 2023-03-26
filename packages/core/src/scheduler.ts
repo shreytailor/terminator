@@ -12,8 +12,7 @@ export class SchedulerImpl implements Scheduler {
   constructor(private readonly commandGenerator: CommandGenerator) {}
 
   scheduleShutdown(params: ShutdownParams): void {
-    const command = this.commandGenerator.generateShutdownCommand(params);
-    exec(command);
+    exec(this.commandGenerator.generateShutdownCommand(params));
   }
 
   scheduleRestart(params: RestartParams): void {

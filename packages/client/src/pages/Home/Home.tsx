@@ -21,13 +21,6 @@ export function Home() {
     },
   });
 
-  const hibernateButton = makeActionButton({
-    type: 'hibernate',
-    onClick: () => {
-      navigate('/hibernate');
-    },
-  });
-
   const abortButton = makeActionButton({
     type: 'abort',
     onClick: async () => {
@@ -41,7 +34,6 @@ export function Home() {
       <div className={classes.actionButtonsContainer}>
         {shutdownButton}
         {restartButton}
-        {hibernateButton}
         {abortButton}
       </div>
     </>

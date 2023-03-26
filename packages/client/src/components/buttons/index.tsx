@@ -1,17 +1,12 @@
-import {
-  CgSleep,
-  MdRestartAlt,
-  RiShutDownLine,
-  TiCancelOutline,
-} from 'react-icons/all';
-import { IconButton } from './IconButton';
 import { TextButton } from './TextButton';
+import { IconButton } from './IconButton';
+import { MdRestartAlt, RiShutDownLine, TiCancelOutline } from 'react-icons/all';
 
 export function makeActionButton({
   type,
   onClick,
 }: {
-  type: 'shutdown' | 'restart' | 'hibernate' | 'abort';
+  type: 'shutdown' | 'restart' | 'abort';
   onClick: () => void;
 }) {
   const DEFAULT_ICON_SIZE = 24;
@@ -30,14 +25,6 @@ export function makeActionButton({
         <IconButton
           text="RESTART"
           icon={<MdRestartAlt size={DEFAULT_ICON_SIZE} color="white" />}
-          onClick={onClick}
-        />
-      );
-    case 'hibernate':
-      return (
-        <IconButton
-          text="HIBERNATE"
-          icon={<CgSleep size={DEFAULT_ICON_SIZE} color="white" />}
           onClick={onClick}
         />
       );

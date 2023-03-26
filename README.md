@@ -25,6 +25,9 @@
             <a href="#development-setup">Development Setup</a>
         </li>
         <li>
+            <a href="#screenshots">Screenshots</a>
+        </li>
+        <li>
             <a href="#roadmap">Roadmap</a>
         </li>
     </ul>
@@ -32,10 +35,10 @@
 
 ## About The Project
 
-Terminator is an application that let's you remotely shutdown, restart, or hibernate your computer from any device on your local network, using an intuitive web interface (as shown below).
+Terminator is an application that let's you remotely shutdown or restart your computer from any device on your local network, using an intuitive web interface (as shown below).
 
 <p align="center">
-    <img src="./images/hero.png" width="650"/>
+    <img src="./images/home.png" width="650"/>
 </p>
 
 ### Built With
@@ -56,7 +59,7 @@ For the sake of this explanation, let's consider the _host device_ as the one we
     <img src="./images/architecture.png" width="650"/>
 </p>
 
-The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown, restart, or hibernate. The endpoints use the host device's shell to schedule termination by creating processes, so naturally the backend has a dependency on it.
+The backend consists of a series of HTTP endpoints, where each of the endpoints can be used to terminate the host computer either through shutdown or restart. The endpoints use the host device's shell to schedule termination by creating processes, so naturally the backend has a dependency on it.
 
 The role of the frontend in Terminator is to provide an intuitive graphical user interface to the users. When an action is performed on the frontend (e.g. user wants to shutdown their computer after 30 minutes), the frontend sends HTTP requests to the backend to schedule those operations. As mentioned previously, the frontend is hosted on the local network so it can be accessed through any device (that are also on the local network) giving the ability to "remotely" terminate your host computer.
 
@@ -77,7 +80,7 @@ chmod +x scripts/run.sh
 scripts/run.sh
 ```
 
-Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network.
+Terminator will then locally start on Port `5556` on your host computer, and will be accessible to any device on your network. If you want to configure the port number, refer to the [Development Setup](#development-setup) guide below.
 
 ## Development Setup
 
@@ -99,18 +102,29 @@ yarn build:core
 4. Run the backend in development mode using the following command.
 
 ```sh
-yarn dev:client
+yarn dev:server
 ```
 
 5. Open another terminal window, and run the frontend in development mode using the following command.
 
 ```sh
-yarn dev:server
+yarn dev:client
 ```
 
 The `yarn dev:server` and `yarn dev:client` both support hot reloading, so any changes in the codebase will be reflected straightaway without having to re-run the scripts.
 
 > Note that if changes are made to the `core` package, you will need to re-run the `yarn build:core` command and possibly restart the frontend and backend.
+
+### Port Configuration
+
+If you want to configure the port on which the backend runs, create a `.env` file in the `packages/server` directory similar to the provided `.example.env` file. Thereafter, provide a value to the `PORT` key and then restart the server for the environment variable to be configured.
+
+## Screenshots
+
+<p align="center">
+    <img src="./images/shutdown.png" width="650"/>
+    <img src="./images/restart.png" width="650"/>
+</p>
 
 ## Roadmap
 

@@ -14,7 +14,7 @@ const port = process.env.PORT || 5556;
 // For accepting JSON data in the POST endpoints.
 server.use(express.json());
 
-if (isDevEnv) {
+if (!isDevEnv) {
   server.use(
     '/',
     express.static(path.join(__dirname, '../', '../', 'client', 'dist'))

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 echo "✨ Installing the dependencies"
 yarn
 clear
@@ -14,4 +16,3 @@ clear
 
 echo "👷🏼‍♂️ Starting the server"
 yarn start:server
-clear

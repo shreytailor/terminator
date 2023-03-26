@@ -25,6 +25,9 @@
             <a href="#development-setup">Development Setup</a>
         </li>
         <li>
+            <a href="#screenshots">Screenshots</a>
+        </li>
+        <li>
             <a href="#roadmap">Roadmap</a>
         </li>
     </ul>
@@ -111,6 +114,14 @@ yarn dev:client
 The `yarn dev:server` and `yarn dev:client` both support hot reloading, so any changes in the codebase will be reflected straightaway without having to re-run the scripts.
 
 > Note that if changes are made to the `core` package, you will need to re-run the `yarn build:core` command and possibly restart the frontend and backend.
+
+## Screenshots
+
+<p align="center">
+    <img src="./images/shutdown.png" width="650"/>
+    <img src="./images/restart.png" width="650"/>
+    <img src="./images/hibernate.png" width="650"/>
+</p>
 
 ## Roadmap
 
